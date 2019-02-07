@@ -1,0 +1,389 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #000;
+}
+
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+.contenido{
+	width: 900px;
+	margin: 0 auto;
+}
+
+#cabezera, #central , #secundario, #pies{
+	width: 100%;
+}
+
+#cabezera , #central , #secundario , #pies , #pies .contenedor{
+	display: flex;
+	flex-direction: row;
+}
+
+#cabezera .titulo > h1, 
+#cabezera .menus nav ul li > a, 
+#secundario .imageuno > a , #secundario .imagedos > a , #pies div > h3{
+	color: #fff;
+	font-family: 'Pacifico', cursive;
+}
+
+#cabezera .menus nav ul li > a,
+#pies .contenedor .col_redesociales div > a{
+	text-decoration: none;
+}
+
+#central .seccionvista img,
+#secundario .imageuno > img,
+#secundario .imagedos > img{
+	box-shadow: 2px 2px 2px #000;
+}
+
+/*** ENCABEZADO ***/
+#cabezera{
+	background-color: #5b7989;
+	font-size: 1em;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#cabezera .titulo , #cabezera .menus {
+	width: 50%;
+}
+
+#cabezera .titulo > h1{
+	margin-left: 1em;
+	text-shadow: 6px 2px #02010a;
+}
+
+#cabezera .menus nav > ul{
+	list-style: none;
+	float: right;
+	padding: 0.5% 2% 0 0;
+}
+
+#cabezera .menus nav ul > li{
+	padding: 2%;
+	margin-left: 1em;
+	float: left;
+}
+
+#cabezera .menus nav ul li > a{
+	font-size: 21px;
+}
+
+#cabezera .menus nav ul .inicio > a,
+#cabezera .menus nav ul .retratos > a, 
+#cabezera .menus nav ul .paisajes > a{
+	text-decoration: underline;
+}
+
+/*** CENTRAL IMAGEN ***/
+#central{
+	background-color: #82c3a6;
+	text-align: center;
+}
+
+#central .seccionvista{
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+#central .seccionvista > img{
+	width: 90%;
+}
+
+/*** SECUNDARIO ***/
+
+#secundario{
+	background-color: #d5c75f;
+	border: 1px solid;
+}
+
+#secundario > .imageuno , #secundario >.imagedos{
+	width: 50%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+#secundario div img{
+	width: 350px;
+	height: 250px;
+	border: 2px solid black;
+}
+
+#secundario > .imageuno , #secundario > .imagedos{
+	text-align: center;
+}
+
+#secundario .imageuno > a , #secundario .imagedos > a{
+	color: black;
+	font-size: 21px;
+}
+
+#secundario .imageuno > img{
+	transition-property: rotate(10deg);
+	transition-duration: 1s;
+}
+
+#secundario .imageuno img:hover{
+	transform: rotate(10deg);
+}
+
+#secundario .imagedos > img{
+	transition-property: translate3d(20px, -5px, 20px);
+	transition-duration: 1s;
+}
+
+#secundario .imagedos img:hover{
+	transform: translate3d(20px, -5px, 20px);
+}
+
+#secundario .imageuno > img:hover ,
+#secundario .imagedos img:hover{
+	box-shadow: 6px 3px #82c3a6;
+}
+
+
+/***  PAISAJES Y RETRATOS ***/
+#secundario .containers {
+	border: none;
+	display: flex;
+	flex-flow: row wrap;
+	text-align: center;
+}
+
+#secundario .containers > div{
+	padding: 2% 0 2% 0;
+}
+
+#secundario .containers div > img{
+	width: 90%;
+}
+
+#secundario .containers > div[class*="col"]{
+	flex-grow: 5;
+	flex: 1 2 30%;
+}
+
+#secundario .containers > .col1{
+	-webkit-filter: blur(10px);
+	filter: blur(10px);
+}
+
+#secundario .containers > div:nth-child(even){
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+#secundario .containers > .col3{
+	-webkit-filter: sepia(90%);
+	filter: sepia(90%);
+}
+
+/*** PIE DE PAGINA ***/
+
+#pies{
+	background-color: #C6d5c5;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+#pies .contenedor div[class*="col_"]{
+	flex-grow: 5;
+	width: 100px;
+	flex: 1 2 30%;
+	padding-bottom: 2%;
+}
+
+#pies .contenedor{
+	width: 100%;
+}
+
+#pies .contenedor div > h3 {
+	color: black;
+}
+
+#pies .contenedor div > div , #pies .contenedor div > h3{
+	padding-left: 10%;
+}
+
+#pies .contenedor .col_redesociales div > a{
+	color: black;
+}
+
+#pies .contenedor .col_redesociales div a > img{
+	width: 6%;
+}
+
+@media (max-width: 920px) {
+
+	.contenido{
+		width: 100%;
+	}
+	
+	#cabezera, #pies{
+		border-radius: 0;
+	}
+	
+	/*** CABEZERA ***/
+	#cabezera{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+	
+	#cabezera .titulo,
+	#cabezera .menus{
+		width: 100%;
+	}
+
+	#cabezera .menus nav > ul{
+		list-style: none;
+		float: none;
+	}
+
+	#cabezera .menus nav ul > li{
+		padding: 0.5%;
+		margin-left: 0.5em;
+		float: left;
+	}
+	
+	/*** SECUNDARIO ***/
+	#secundario{
+		border: 0;
+	}
+	
+}
+
+@media (max-width: 790px) {
+
+	#cabezera, #central, #secundario, #pies, #pies .contenedor{
+		display: flex;
+	}
+	
+	/*** CABEZERA ***/
+	#cabezera{
+		flex-direction: column;
+		text-align: center;
+	}
+	
+	#cabezera .menus nav ul > li{
+		padding-left: 12%;
+	}
+	
+	/*** CENTRAL ***/
+	#central, #secundario{
+		flex-direction: row;
+	}
+	
+	/*** SECUNDARIO ***/
+	#secundario .imageuno > img,
+	#secundario .imagedos > img{
+		width: 80%;
+	}
+
+	/*** PIE DE PAGINA ***/
+	#pies .contenedor .col_terminos{
+		text-align: center;
+	}
+
+}
+
+@media (min-width: 421px) and (max-width: 720px)
+{
+	#cabezera, #central, #secundario, #pies, #pies .contenedor{
+		display: flex;
+	}
+	
+	/*** PIE DE PAGINA ***/
+	#pies .contenedor{
+		flex-flow: row wrap;
+	}
+	
+	#pies .contenedor div[class*="col_"]{
+		flex-grow: 5;
+		width: 100px;
+		flex: 1 2 40%;
+		padding-bottom: 2%;
+	}
+
+	#pies .contenedor div > div , #pies .contenedor div > h3{
+		padding-left: 10%;
+		text-align: left;
+	}
+
+}
+
+@media (max-width: 420px){
+
+	#cabezera, #central, #secundario,
+	#pies .contenedor{
+		display: flex;
+		flex-direction: column;
+	}
+	
+	/*** CABEZERA ***/
+	#cabezera .titulo > h1{
+		font-size: 1.5em;
+		margin-left: 0.2em;
+	}
+
+	#cabezera .menus nav ul > li{
+		padding-left: 8%;
+	}
+
+	/*** SECUNDARIO ***/
+	#secundario div img{
+		width: 100%;
+		height: 150px;
+		border: 2px solid black;
+	}
+
+	#secundario > .imageuno , #secundario > .imagedos{
+		text-align: center;
+		width: 100%;
+	}
+	
+	/***  PAISAJES Y RETRATOS ***/
+	#secundario .containers {
+		border: none;
+		display: flex;
+		flex-direction: column;
+		flex-flow: row wrap;
+		text-align: center;
+	}
+	
+	#secundario .containers div > img{
+		height: 200px;
+	}
+
+	#secundario .containers > div[class*="col"]{
+		flex-grow: 5;
+		flex: 1 2 100%;
+	}
+
+	/*** PIE DE PAGINA ***/
+	#pies .contenedor{
+		flex-flow: row wrap;
+	}
+	
+	#pies .contenedor div[class*="col_"]{
+		flex-grow: 5;
+		width: 100%;
+		flex: 1 2 100%;
+		padding-bottom: 2%;
+	}
+
+	#pies .contenedor div > div , #pies .contenedor div > h3{
+		padding-left: 10%;
+		text-align: left;
+	}
+
+}
